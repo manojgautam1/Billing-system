@@ -1,0 +1,65 @@
+
+
+def for_storing_sales(name,ph,date,sells,total,vat,ship,grand,sec):
+    """To create a file having unique value each time while a user buys the laptop from the store
+    to save his/her purchase data """
+    file= open(str(sec)+str(name)+"sale.txt","w")
+    file.write("\n")
+    file.write("___________________________________________________________________")
+    file.write("\n")
+    file.write("\t \t \t|| OLIZ LAPTOP STORE || \n")
+    file.write("\n Customer name" + str(name))
+    file.write("\n Customer phone number: "+str(ph))
+    file.write("\n Date of sells : "+str(date))
+    file.write("\n")
+    file.write("-------------------------------------------------------------------")
+    file.write("\n")
+    file.write("Purchase Details are: ")
+    file.write("\n")
+    file.write("-------------------------------------------------------------------")
+    file.write("\n")
+    file.write(" Product Name \t \t Qty \t Rate \t Amount")
+    file.write("\n")
+    file.write("-------------------------------------------------------------------" )
+    file.write("\n")
+    for i in sells:
+        file.write(str(i[0])+"\t \t " +str(i[1])+ "\t " +str(i[2])+ "\t " +"$"+str(i[3]))
+        file.write("\n")
+
+    file.write("------------------------------------------------------------------" )
+    file.write("\n Your total is : $" + str(total))
+    file.write("\n After Vat Amount: $" +str(vat))
+    file.write("\n Shipping cost: $"+str(ship))
+    file.write("\n Grand Total : $" + str(grand))
+    file.write("\n")
+    file.write("-------------------------------------------------------------------")
+    file.write("\n")
+    file.close()
+
+def for_purchasing_laptops(name,date,buys,total,vat,grand,sec):
+    """THis function is to create a file while an employee add the respective laptops quantity to the store
+    with its cost"""
+    file=open(str(sec)+str(name)+"purchase.txt","w")
+    file.write("\n")
+    file.write("Ordered for laptops by: "+str(name) )
+    file.write("\n")
+    file.write("Oredered date: "+str(date))
+    file.write("\n")
+    file.write("-------------------------------------------------------------------")
+    file.write("\n")
+    file.write(" Product Name \t\tQty \t Rate \t Amount")
+    file.write("\n")
+    file.write("-------------------------------------------------------------------")
+    file.write("\n")
+    for i in buys:
+        file.write(str(i[0])+"\t \t " +str(i[1])+ "\t " +str(i[2])+ "\t " +"$"+str(i[3]))
+        file.write("\n")
+    file.write("-------------------------------------------------------------------")
+    file.write("\n")
+    file.write("Your total is : $" + str(total))
+    file.write(" \n Vat Amount: $" +str(vat))
+    file.write("\n Total Due Amount : $" + str(grand))
+    file.write("\n")
+    file.write("-------------------------------------------------------------------")
+    file.write("\n")
+    file.close()
